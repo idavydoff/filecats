@@ -1,0 +1,48 @@
+{
+  "name": "filecats-frontend",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "",
+  "main": "./src/app.ts",
+  "scripts": {
+    "npm-reset": "rm -rf node_modules && npm cache verify && npm i",
+    "git-reset": "git reset HEAD --hard && git clean -fd && git fetch --all --tags --prune && git pull",
+    "start": "webpack serve",
+    "build": "webpack"
+  },
+  "keywords": [
+    "pixijs",
+    "playground",
+    "basic",
+    "webpack",
+    "typescript",
+    "seed"
+  ],
+  "dependencies": {
+    "pixi.js": "^7.2.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.14.3",
+    "@babel/preset-env": "7.14.2",
+    "@types/node": "15.6.0",
+    "@types/pixi.js": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "4.24.0",
+    "@typescript-eslint/parser": "4.24.0",
+    "babel-loader": "8.2.2",
+    "clean-webpack-plugin": "3.0.0",
+    "copy-webpack-plugin": "9.0.0",
+    "css-loader": "5.2.5",
+    "eslint": "7.27.0",
+    "eslint-config-airbnb-base": "14.2.1",
+    "eslint-plugin-import": "2.23.3",
+    "file-loader": "6.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "sass": "1.34.0",
+    "style-loader": "2.0.0",
+    "ts-loader": "9.2.2",
+    "typescript": "4.2.4",
+    "webpack": "5.37.1",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "3.11.2"
+  }
+}

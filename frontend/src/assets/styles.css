@@ -1,0 +1,128 @@
+@font-face {
+  font-family: 'Press2P';
+  src: url(./fonts/Press_Start_2P/PressStart2P-Regular.ttf);
+}
+body {
+  font-family: 'Press2P';
+  margin: 0;
+  overflow: hidden;
+}
+* {
+  box-sizing: border-box;
+  cursor: auto;
+}
+#useFont {
+  font-family: 'Press2P';
+  font-size: 0px;
+}
+
+.modal-wrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.closed {
+  display: none;
+}
+
+.modal {
+  font-family: 'Press2P';
+  /* border: 10px solid transparent; */
+  /* border-image: url(./assets/img/border.png) 1.5 stretch; */
+  /* background: url("./assets/img/modal3-close.png"); */
+  /* background-size: contain; */
+  max-width: 400px;
+  max-height: 400px;
+  /* position: relative; */
+  /* image-rendering: pixelated; */
+  color: antiquewhite;
+  /* filter: hue-rotate(122deg); */
+}
+
+.modal .title {
+  font-size: 12px;
+  line-height: 15px;
+  /* width: 245px; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  position: relative;
+}
+
+.modal .message {
+  margin-top: 15px;
+  font-size: 10px;
+  line-height: 14px;
+  width: 266px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal img {
+  image-rendering: pixelated;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  cursor: pointer;
+}
+
+.modal img:hover {
+  filter: brightness(.5)
+}
+
+.modal-join {
+  width: 400px;
+}
+
+.modal-join input {
+  margin-bottom: 20px;
+}
+
+.modal-join button {
+  width: 100%;
+}
+
+canvas {
+  z-index: 3;
+}
+
+.buttons-wrapper {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100vw;
+  padding: 15px;
+}
+
+.online-text {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: #ffffff;
+  font-size: 25px;
+  z-index: 1;
+}
+
+.button {
+  cursor: pointer;
+}
+
+.welcome-title {
+  margin-bottom: 30px;
+  color: #ee2091;
+}
+
+.error-text {
+  font-size: 11px;
+  /* text-align: center; */
+  /* margin-top: 15px; */
+  width: 100%;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FileCats</title>
+  <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="./assets/styles.css"> 
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <div id="useFont">1</div>
+  <span class="nes-text online-text">Online: 0/50</span>
+
+  <div class="buttons-wrapper closed" id="buttons">
+    <label class="nes-btn button" id="send-file">
+      <span>Select file (max 5MB)</span>
+      <input type="file">
+    </label>
+  </div>
+
+  <div class="modal-wrapper">
+    <div id="message-modal" class="nes-container is-dark modal closed">
+      <!-- <img src="./assets/img/close.png" />  -->
+      <p class="title">12</p>
+      <p class="message">12</p>
+
+      <button type="button" id="modal-close" class="nes-btn is-error">Close</button>
+      <button type="button" id="modal-download" class="nes-btn is-success">Download</button>
+      <span></span>
+    </div>
+
+    <span class="nes-text welcome-title">Welcome to FileCats :3</span>
+    <div id="auth-modal" class="nes-container is-dark modal-join">
+      <input type="text" id="auth-input" class="nes-input is-dark" placeholder="username" maxlength="20">
+      <p class="nes-text is-error error-text closed"></p>
+      <button type="button" id="auth-button" class="nes-btn is-success">join</button>
+    </div>
+  </div>
+
+</body>
+</html>

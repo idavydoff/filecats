@@ -1,0 +1,62 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "import"],
+  "rules": {
+    "prettier/prettier": [
+      "error", { 
+        "singleQuote": true, 
+        "endOfLine": "auto",
+        "jsxSingleQuote": true
+      }
+    ],
+    "strict": 1,
+    "react/jsx-indent": [1, 2],
+    "quotes": [2, "single"],
+    "no-param-reassign": [0],
+    "no-unused-vars": 1,
+    "jsx-quotes": [2, "prefer-single"],
+    "prefer-const": 2,
+    "arrow-body-style": [1],
+    "one-var": [0],
+    "max-len": [2, { "code": 120 }],
+    "no-confusing-arrow": 0,
+    "comma-dangle": [2, "always-multiline"],
+    "newline-before-return": 2,
+    "import/no-duplicates": 1,
+    "no-duplicate-imports": 0,
+    "no-restricted-syntax": 0,
+    "react/sort-comp": 0,
+    "camelcase": 1,
+    "new-cap": 1,
+    "no-shadow": 0,
+    "react/prop-types": 0,
+    "react/no-string-refs": 0,
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/ban-types": 1,
+    "react/no-find-dom-node": 1,
+    "no-useless-escape": 0,
+    "@typescript-eslint/no-inferrable-types": 0,
+    "react/display-name": 0,
+    "no-irregular-whitespace": 0,
+    "no-prototype-builtins": 0
+  }
+}
