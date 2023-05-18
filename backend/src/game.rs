@@ -12,7 +12,7 @@ pub struct Player {
 
 #[derive(Clone)]
 pub struct Game {
-  pub players: Arc<Mutex<HashMap<String, Player>>>, // username - ip:port
+  pub players: Arc<Mutex<HashMap<String, Player>>>,
   pub broadcast_sender: UnboundedSender<BroadcastEvents>
 }
 
@@ -41,13 +41,13 @@ impl Game {
     let _ = self.broadcast_sender.send(BroadcastEvents::Quit(id, username));
   }
 
-  pub fn get_list_message(&self) -> String {
+  pub fn get_list_message(&self) -> Message {
     let list_string = self.players.lock().iter().map(|w| w.0.to_owned()).collect::<Vec<String>>().join(",");
 
-    format!("LIST|{}", list_string)
+    Message::Text(format!("LIST|{}", list_string))
   }
 
-  pub fn send_file(&self, from: String,msg: Message) {
+  pub fn send_file(&self, from: String, msg: Message) {
     let mut players = self.players.lock();
     if let Some(player) = players.get(&from) {
       if player.dt_last_send.is_none() || player.dt_last_send.unwrap().elapsed().as_secs() > 15 {

@@ -1,15 +1,12 @@
-use std::net::SocketAddr;
-
 use futures_util::{StreamExt, SinkExt};
-use game::Game;
 use tokio::net::{TcpStream, TcpListener};
-use tokio_tungstenite::{accept_async, tungstenite::Message};
+use tokio_tungstenite::accept_async;
 use tokio::sync::mpsc;
 use regex::Regex;
-use types::{Connection, BroadcastEvents};
 use rand::Rng;
 
-use crate::types::UserFileMessage;
+use types::{Connection, BroadcastEvents, UserFileMessage};
+use game::Game;
 
 mod types;
 mod game;
@@ -25,25 +22,23 @@ async fn main () {
 	let game = Game::new(broadcast_sender);
 	
 	loop {
-		let (stream, addr) = server.accept().await.unwrap();
-		tokio::spawn(process_con(stream, addr, game.clone()));
+		let (stream, _) = server.accept().await.unwrap();
+		tokio::spawn(process_con(stream, game.clone()));
 	}
 }
 
-async fn process_con(stream: TcpStream, addr: SocketAddr, game: Game) {
+async fn process_con(stream: TcpStream, game: Game) {
 	let id = rand::thread_rng().gen::<u32>();
 	let websocket = accept_async(stream).await.unwrap();
 
 	let (mut sender, mut receiver) = websocket.split();
 	let mut username = String::new(); 
 
-	let list = game.get_list_message();
-	let _ = sender.send(Message::Text(list)).await;
+	let _ = sender.send(game.get_list_message()).await;
 
 	game.add_connection(Connection {
 		id,
 		con: sender,
-		addr
 	});
 
 	// Waits for join message

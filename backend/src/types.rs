@@ -1,5 +1,3 @@
-use std::net::SocketAddr;
-
 use bstr::ByteSlice;
 use futures_util::stream::SplitSink;
 use tokio::net::TcpStream;
@@ -35,7 +33,6 @@ impl UserFileMessage {
 #[derive(Debug)]
 pub struct Connection {
   pub id: u32,
-  pub addr: SocketAddr,
   pub con: SplitSink<WebSocketStream<TcpStream>, Message>,
 }
 
